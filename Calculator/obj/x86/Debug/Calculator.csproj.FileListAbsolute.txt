@@ -1,0 +1,5 @@
+D:\asp\Calculator\Calculator\bin\Debug\Calculator.exe
+D:\asp\Calculator\Calculator\bin\Debug\Calculator.pdb
+D:\asp\Calculator\Calculator\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\asp\Calculator\Calculator\obj\x86\Debug\Calculator.exe
+D:\asp\Calculator\Calculator\obj\x86\Debug\Calculator.pdb
