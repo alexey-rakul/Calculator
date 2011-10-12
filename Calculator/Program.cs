@@ -32,11 +32,20 @@ namespace TestCalculator
                 Console.WriteLine("Testing 2 args...NOT OK!");
         }
 
+        static void TestUnknownArgs()
+        {
+            if (Calculator1.Add("2,2,3") == "7")
+                Console.WriteLine("Testing unknown args...OK!");
+            else
+                Console.WriteLine("Testing unknown args...NOT OK!");
+        }
+
         static void Main(string[] args)
         {
             TestZeroArgs();
             TestOneArgs();
             TestTwoArgs();
+            TestUnknownArgs();
         }
     }
 }

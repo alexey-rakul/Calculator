@@ -17,7 +17,10 @@ namespace Calculator
                 return args[0];
             else
             {
-                int sum = int.Parse(args[0]) + int.Parse(args[1]);
+                int sum = 0;
+                for (int i = 0; i < args.Count(); i++)
+                    sum += int.Parse(args[i]);
+                  
                 return sum.ToString();
             }
         }
