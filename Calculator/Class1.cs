@@ -11,9 +11,20 @@ namespace Calculator
         {
             if (String.IsNullOrWhiteSpace(str))
                 return "0";
-            char[] delims = new char[] {',' };
-            string[] args = str.Split(delims);
-            if (args.Count() == 1)
+            char[] delims;
+            string numbers;
+            if (str[0] == '/' && str[1] == '/' && str[3] == '\n')
+            {
+                delims = new char[] { str[2] };
+                numbers = str.Substring(4);
+            }
+            else
+            {
+                delims = new char[] { ',', '\n' };
+                numbers = str;
+            }
+            string[] args = numbers.Split(delims);
+            if (args.Length == 1)
                 return args[0];
             else
             {
