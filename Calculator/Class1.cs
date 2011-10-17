@@ -11,6 +11,7 @@ namespace Calculator
         {
             if (String.IsNullOrWhiteSpace(str))
                 return "0";
+
             char[] delims;
             string numbers;
             if (str[0] == '/' && str[1] == '/' && str[3] == '\n')
@@ -23,17 +24,23 @@ namespace Calculator
                 delims = new char[] { ',', '\n' };
                 numbers = str;
             }
+
             string[] args = numbers.Split(delims);
-            if (args.Length == 1)
-                return args[0];
-            else
+            int sum = 0;
+            string negatives = "";
+            for (int i = 0; i < args.Count(); i++)
             {
-                int sum = 0;
-                for (int i = 0; i < args.Count(); i++)
-                    sum += int.Parse(args[i]);
-                  
-                return sum.ToString();
+                int number = int.Parse(args[i]);
+                if (number < 0)
+                    negatives += " " + number.ToString();
+                else
+                    sum += number;
             }
+
+            if (!String.IsNullOrWhiteSpace(negatives))
+                throw new Exception("negatives not allowed:" + negatives);
+            return sum.ToString();
+
         }
     }
 }
