@@ -71,6 +71,33 @@ namespace TestCalculator
                 Console.WriteLine("NOT OK!");
         }
 
+        static void TestBigNumbers()
+        {
+            Console.WriteLine("Testing big numbers...");
+            if (Calculator1.Add("//;\n1001;2") == "2")
+                Console.WriteLine("OK!");
+            else
+                Console.WriteLine("NOT OK!");
+        }
+
+        static void TestLongDelims()
+        {
+            Console.WriteLine("Testing long delimiters...");
+            if (Calculator1.Add("//[***]\n1***2***3") == "6")
+                Console.WriteLine("OK!");
+            else
+                Console.WriteLine("NOT OK!");
+        }
+
+        static void TestMultDelims()
+        {
+            Console.WriteLine("Testing multiple delimiters...");
+            if (Calculator1.Add("//[**][%%%]\n1**2%%%3") == "6")
+                Console.WriteLine("OK!");
+            else
+                Console.WriteLine("NOT OK!");
+        }
+
         static void Main(string[] args)
         {
             try
@@ -81,6 +108,9 @@ namespace TestCalculator
                 TestUnknownArgs();
                 TestNewLineDelim();
                 TestUserDelim();
+                TestBigNumbers();
+                TestLongDelims();
+                TestMultDelims();
                 TestNegatives();
             }
             catch(Exception ex)
